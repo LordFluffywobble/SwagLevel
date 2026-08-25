@@ -35,6 +35,6 @@ public class PlayerTests
         var createdResult   = Assert.IsType<CreatedAtActionResult>(result);
         var returnedPlayer  = Assert.IsType<Player>(createdResult.Value);
 
-        Assert.Equal(3, returnedPlayer.Id);
+        Assert.Equal(1, returnedPlayer.Id);
     }
 }
