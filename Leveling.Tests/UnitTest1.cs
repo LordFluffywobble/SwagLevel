@@ -18,11 +18,11 @@ public class PlayerTests
         var player1     = new Player(1, "KITT", 5, 2);
 
         var result      = controller.CreatePlayer(player1);
-        var okResult    = Assert.IsType<OkObjectResult>(result);
+        var createdResult    = Assert.IsType<CreatedAtActionResult>(result);
         
-        var returnedPlayer = Assert.IsType<Player>(okResult.Value);
+        var returnedPlayer = Assert.IsType<Player>(createdResult.Value);
 
-        Assert.Equal("KATT", returnedPlayer.Name);
+        Assert.Equal("KITT", returnedPlayer.Name);
         
     }
 
