@@ -12,18 +12,29 @@ using Xunit.Abstractions;
 public class PlayerTests
 {
     [Fact]
-    public void CreateAPlayer()
+    public void CreateAPlayerName()
     {
-        var controller  = new PlayerController();
-        var player1     = new Player(1, "KITT", 5, 2);
+        var controller      = new PlayerController();
+        var player1         = new Player(1, "KITT", 5, 2);
 
-        var result      = controller.CreatePlayer(player1);
-        var createdResult    = Assert.IsType<CreatedAtActionResult>(result);
+        var result          = controller.CreatePlayer(player1);
+        var createdResult   = Assert.IsType<CreatedAtActionResult>(result);
         
-        var returnedPlayer = Assert.IsType<Player>(createdResult.Value);
+        var returnedPlayer  = Assert.IsType<Player>(createdResult.Value);
 
         Assert.Equal("KITT", returnedPlayer.Name);
-        
     }
 
+    [Fact]
+    public void CreateAPlayerId()
+    {
+        var controller      = new PlayerController();
+        var player1         = new Player(1, "KITT", 5, 2);
+
+        var result          = controller.CreatePlayer(player1);
+        var createdResult   = Assert.IsType<CreatedAtActionResult>(result);
+        var returnedPlayer  = Assert.IsType<Player>(createdResult.Value);
+
+        Assert.Equal(3, returnedPlayer.Id);
+    }
 }
