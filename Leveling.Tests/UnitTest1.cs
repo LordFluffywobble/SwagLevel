@@ -37,4 +37,20 @@ public class PlayerTests
 
         Assert.Equal(1, returnedPlayer.Id);
     }
+
+    [Fact]
+    public void CheckFullPlayerStats()
+    {
+        var controller      = new PlayerController();
+        var player1         = new Player(1, "KITT", 5, 2);
+
+        var result          = controller.CreatePlayer(player1);
+        var createdResult   = Assert.IsType<CreatedAtActionResult>(result);
+        var returnedPlayer  = Assert.IsType<Player>(createdResult.Value);
+
+        Assert.Equal(1, returnedPlayer.Id);
+        Assert.Equal("KITT", returnedPlayer.Name);
+        Assert.Equal(5, returnedPlayer.Xp);
+        Assert.Equal(1, returnedPlayer.Level);
+    }
 }
