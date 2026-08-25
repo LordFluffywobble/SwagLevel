@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Leveling.API/Leveling.API.csproj" />
+  <Project Path="Leveling.Tests/Leveling.Tests.csproj" />
+</Solution>

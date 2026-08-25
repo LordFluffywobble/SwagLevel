@@ -1,0 +1,6 @@
+@Leveling.API_HostAddress = http://localhost:5183
+
+GET {{Leveling.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
