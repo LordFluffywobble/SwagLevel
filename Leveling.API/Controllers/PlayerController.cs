@@ -53,7 +53,8 @@ public class PlayerController : ControllerBase
     [HttpPatch("{id}addplayerxp")]
     public IActionResult LevelUp(int id, [FromBody] int amount)
     {
-        Player player = GetPlayerById(id);
+        Player player = _playerList.FirstOrDefault(p => p.Id == id);
+        
         if (player == null)
         {
             return NotFound("No player with that Id {id}");
