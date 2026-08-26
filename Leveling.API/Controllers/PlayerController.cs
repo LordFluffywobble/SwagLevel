@@ -50,7 +50,20 @@ public class PlayerController : ControllerBase
         return Ok(player);
     }
     
-
+    [HttpPatch("{id}addplayerxp")]
+    public IActionResult LevelUp(int id, [FromBody] int amount)
+    {
+        Player player = GetPlayerById(id);
+        if (player == null)
+        {
+            return NotFound("No player with that Id {id}");
+        }
+    
+        var xpManager = new Xp();
+        xpManager.AddXp(player, amount);
+        
+        return Ok(player);
+    }
 }
 
 
