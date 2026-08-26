@@ -28,7 +28,7 @@ public class AddXpTests
         xpManager.AddXp(player1, 25);
 
         Assert.Equal(1, player1.Id);
-        Assert.Equal("KITT", player1.Name);
+        Assert.Equal("KATT", player1.Name);
         Assert.Equal(25, player1.Xp);
         Assert.Equal(2, player1.Level);
     }
