@@ -48,9 +48,9 @@ public class PlayerTests
         var createdResult   = Assert.IsType<CreatedAtActionResult>(result);
         var returnedPlayer  = Assert.IsType<Player>(createdResult.Value);
 
-        Assert.Equal(1, returnedPlayer.Id);
-        Assert.Equal("KITT", returnedPlayer.Name);
-        Assert.Equal(5, returnedPlayer.Xp);
-        Assert.Equal(2, returnedPlayer.Level);
+        Assert.Equal(1      ,returnedPlayer.Id   );
+        Assert.Equal("KITT" ,returnedPlayer.Name );
+        Assert.Equal(5      ,returnedPlayer.Xp   );
+        Assert.Equal(2      ,returnedPlayer.Level);
     }
 }
