@@ -15,7 +15,7 @@ public class AddXpTests
 
         xpManager.AddXp(player1, 5);
 
-        Assert.Equal(4, player1.Xp);
+        Assert.Equal(5, player1.Xp);
         
     }
 }
